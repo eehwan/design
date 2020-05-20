@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <title> 쿨섬머 오설록 </title>
+    <link rel="stylesheet" href="setting/style.css">
+    <script type="text/javascript">
+      function dis() {
+        if ($("#leaf_1").css('display') == 'none') {
+          $("leaf_1").show();
+        } else {
+          $("leaf_1").hide();
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <div id="menu_bar" onclick="$('nav').show()">
+      <img src="img/메뉴바.png" alt="메뉴">
+    </div>
+    </a>
+    <nav id=menu>
+      <div id="nav_header">
+        <span>오설록타이포로고</span>
+        <span id="X_button" onclick="$('nav').hide()">
+          <img src="img/X_1.png"> <img src="img/X_2.png">
+        </span>
+      </div>
+      <ul>
+        <a href="index.html" onmouseover="dis()">
+          <li id="li_1">
+            <img src="img/나뭇잎 블릿.png" clas="leaf" id="leaf_1">
+            <img src="img/Home.png" class="nav_en" alt="Home">
+            <img src="img/01_홈으로.png" class="nav_ko" alt="홈으로">
+            <img src="img/메뉴 라인.png" class="메뉴라인">
+          </li>
+        </a>
+        <li id="li_2">
+          <img src="img/나뭇잎 블릿.png" class="leaf" id="leaf_2">
+          <img src="img/Product.png" class="nav_en" alt="Product"><img src="img/02_제품보기.png" class="nav_ko" alt="제품보기">
+          <img src="img/메뉴 라인.png" class="메뉴라인">
+          <p> <a href=""><img src="img/햄버거_녹차섬.png" class="섬들" alt="녹차섬" onmouseover="this.src='img/햄버거_녹차섬_호버.png'" onmouseout="this.src='img/햄버거_녹차섬.png'"></a>
+            <a href=""><img src="img/햄버거_산호섬.png" class="섬들" alt="산호섬" onmouseover="this.src='img/햄버거_산호섬_호버.png'" onmouseout="this.src='img/햄버거_산호섬.png'"></a> </p>
+          <p> <a href=""><img src="img/햄버거_달빛섬.png" class="섬들" alt="달빛섬" onmouseover="this.src='img/햄버거_달빛섬_호버.png'" onmouseout="this.src='img/햄버거_달빛섬.png'"></a>
+            <a href=""><img src="img/햄버거_영귤섬.png" class="섬들" alt="영귤섬" onmouseover="this.src='img/햄버거_영귤섬_호버.png'" onmouseout="this.src='img/햄버거_영귤섬.png'"></a> </p>
+        </li>
+        <a href="">
+          <li id="li_3">
+            <img src="img/나뭇잎 블릿.png" class="leaf" id="leaf_3">
+            <img src="img/Event.png" class="nav_en" alt="Event">
+            <img src="img/03_이벤트.png" class="nav_ko" alt="">
+            <img src="img/메뉴 라인.png" class="메뉴라인">
+          </li>
+        </a>
+      </ul>
+      <div id="logos">
+        <a target="_blank" href="https://www.instagram.com/osulloc_official/?hl=ko"><img src="img/ic_insta.png" alt="insta" class='sns_logo' id='insta_logo'></a>
+        <a target="_blank" href="https://www.facebook.com/Jeju.OSULLOC/"><img src="img/ic_facebook.png" alt="facebook" class='sns_logo' id='facebook_logo'></a>
+        <a target="_blank" href="https://www.youtube.com/channel/UC27q_WWuOkdyNIr7M_6trvA"><img src="img/ic_Youtube.png" alt="Youtube" class='sns_logo' id='Youtube_logo'></a>
+      </div>
+    </nav>
+    <header>
+      <p>오설록 로고</p>
+    </header>
+    <section>
+      <div>텍스트 박스</div>
+      <div>scroll to explore</div>
+      <div>Location bar</div>
+    </section>
+  </body>
+
+</html>
