@@ -27,7 +27,7 @@
         <span id='shade'></span>
         <nav id=menu>
           <div id="nav_header">
-            <img src="오설록타이포로고.png" id="오설록타이포로고">
+            <img src="img/오설록타이포로고.png" id="오설록타이포로고">
             <span id="X_button" onclick="$('#pop').hide()">
               <img src="img/X_1.png"> <img src="img/X_2.png">
             </span>
@@ -35,14 +35,14 @@
           <ul>
             <a href="index.html" onmouseover="">
               <li id="li_1">
-                <img src="img/01_홈으로.png">
+                <img src="img/01_홈으로.png" onmouseover="this.src='img/01_홈으로_호버.png'" onmouseout="this.src='img/01_홈으로.png'">
                 <img src="img/메뉴 라인.png" class="메뉴라인">
               </li>
             </a>
-            <li id="li_2">
-              <img src="img/02_제품보기.png">
+            <li id="li_2" onmouseenter='$(".섬_list").show()' onmouseleave='$(".섬_list").hide()'>
+              <img src="img/02_제품보기.png" onmouseover="this.src='img/02_제품보기_호버.png'" onmouseout="this.src='img/02_제품보기.png'">
               <img src="img/메뉴 라인.png" class="메뉴라인">
-              <div class='섬_list'>
+              <div class='섬_list' style="display: none;">
                 <div><a href=""><img src="img/햄버거_녹차섬.png" class="섬들" onmouseover="this.src='img/햄버거_녹차섬_호버.png'" onmouseout="this.src='img/햄버거_녹차섬.png'"></a>
                   <a href=""><img src="img/햄버거_산호섬.png" class="섬들" onmouseover="this.src='img/햄버거_산호섬_호버.png'" onmouseout="this.src='img/햄버거_산호섬.png'"></a></div>
                 <div><a href=""><img src="img/햄버거_달빛섬.png" class="섬들" onmouseover="this.src='img/햄버거_달빛섬_호버.png'" onmouseout="this.src='img/햄버거_달빛섬.png'"></a>
@@ -51,7 +51,7 @@
             </li>
             <a href="">
               <li id="li_3">
-                <img src="img/03_이벤트.png">
+                <img src="img/03_이벤트.png" onmouseover="this.src='img/03_이벤트_호버.png'" onmouseout="this.src='img/03_이벤트.png'">
                 <img src="img/메뉴 라인.png" class="메뉴라인">
               </li>
             </a>
@@ -64,14 +64,16 @@
         </nav>
       </div>
       <main>
-        <header>
-          <img src="img/메인 로고.png">
-        </header>
-        <section>
-          <div>텍스트 박스</div>
-          <div>scroll to explore</div>
-          <div>Location bar</div>
-        </section>
+        <div id="img">
+          <img src="img/배경.png">
+          <img src="img/메인 로고.png" id="메인로고">
+          <img src="img/전체사이즈/냇가-돌,-풀.png">
+          <img src="img/전체사이즈/이벤트 호버.png">
+          <img src="img/전체사이즈/뒤-산.png">
+          <img src="img/전체사이즈/왼쪽-말.png">
+        </div>
+        <div>scroll to explore</div>
+        <div>Location bar</div>
       </main>
     </div>
   </body>
