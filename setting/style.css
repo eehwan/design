@@ -132,10 +132,20 @@ main{
   position:absolute;
   width: 1920px;
   height: 980px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 main>#img>img{
   position: absolute;
+  transition: all 0.5s;
 }
 #메인로고{
   mix-blend-mode :multiply;
+}
+#Location_bar{
+  position: fixed;
+  top: 50vh;
+  right: 50px;
+  z-index: 4;
 }

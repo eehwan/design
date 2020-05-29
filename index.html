@@ -7,13 +7,23 @@
     <title> 쿨섬머 오설록 </title>
     <link rel="stylesheet" href="setting/style.css">
     <script type="text/javascript">
-      function dis() {
-        if ($("#leaf_1").css('display') == 'none') {
-          $("leaf_1").show();
+      function dis(name) {
+        if ($(name).css('display') == 'none') {
+          $(name).show();
         } else {
-          $("leaf_1").hide();
+          $(name).hide();
         }
       }
+      fucntion files() {
+        var testFolder = 'img/전체사이즈';
+        var fs = require('fs');
+        fs.readdir(testFolder, (err, filelist) => { // 하나의 데이터씩 나누어 출력
+          filelist.forEach(file => {
+            console.log("<img src='img/전체사이즈/" + file + ".png'>");
+          })
+        })
+      }
+      $("body").fadeIn(2000);
     </script>
   </head>
 
@@ -64,16 +74,15 @@
         </nav>
       </div>
       <main>
-        <div id="img">
-          <img src="img/배경.png">
-          <img src="img/메인 로고.png" id="메인로고">
-          <img src="img/전체사이즈/냇가-돌,-풀.png">
+        <div id="img" style="background-image: url('img/배경.png')">
           <img src="img/전체사이즈/이벤트 호버.png">
           <img src="img/전체사이즈/뒤-산.png">
+          <img src="img/전체사이즈/냇가-돌,-풀.png">
           <img src="img/전체사이즈/왼쪽-말.png">
+          <img src="img/메인 로고.png" id="메인로고">
         </div>
-        <div>scroll to explore</div>
-        <div>Location bar</div>
+        <span id="scroll to explore"></span>
+        <span id="Location_bar"><img src="Location_bar.png" alt="Location_bar"></span>
       </main>
     </div>
   </body>
