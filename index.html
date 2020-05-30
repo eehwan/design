@@ -13,44 +13,46 @@
         } else {
           $(name).hide();
         }
-      }
-      fucntion files() {
-        var testFolder = 'img/전체사이즈';
-        var fs = require('fs');
-        fs.readdir(testFolder, (err, filelist) => { // 하나의 데이터씩 나누어 출력
-          filelist.forEach(file => {
-            console.log("<img src='img/전체사이즈/" + file + ".png'>");
-          })
-        })
-      }
+      };
       $("body").fadeIn(2000);
+      $(window).resize(function() {
+        var winHeight = window.innerHeight;
+        var boxHeight = $('#wrapper').height();
+        //max-width값인 500px아래서만 작동
+        if (winHeight <= 980) {
+          //1.681:1
+          $('#wrapper').width(boxHeight * 1.9592);
+        }
+      });
     </script>
   </head>
 
   <body>
-    <div id='wrapper'>
+    <div class='wrapper'>
       <div id="menu_bar" onclick="$('#pop').show()">
         <img src="img/메뉴바.png">
       </div>
       </a>
       <div id='pop'>
-        <span id='shade'></span>
+        <img src="img/딤드.png" id='dimmed'>
+        <img src="img/메뉴창_그림자.png">
         <nav id=menu>
           <div id="nav_header">
+            <img src="img/막대기.png" alt='막대기' id='막대기'>
             <img src="img/오설록타이포로고.png" id="오설록타이포로고">
             <span id="X_button" onclick="$('#pop').hide()">
               <img src="img/X_1.png"> <img src="img/X_2.png">
             </span>
           </div>
           <ul>
-            <a href="index.html" onmouseover="">
-              <li id="li_1">
+            <li id="li_1">
+              <a href="#page1">
                 <img src="img/01_홈으로.png" onmouseover="this.src='img/01_홈으로_호버.png'" onmouseout="this.src='img/01_홈으로.png'">
                 <img src="img/메뉴 라인.png" class="메뉴라인">
-              </li>
-            </a>
+              </a>
+            </li>
             <li id="li_2" onmouseenter='$(".섬_list").show()' onmouseleave='$(".섬_list").hide()'>
-              <img src="img/02_제품보기.png" onmouseover="this.src='img/02_제품보기_호버.png'" onmouseout="this.src='img/02_제품보기.png'">
+              <img src="img/02_제품보기.png" onmouseenter="this.src='img/02_제품보기_호버.png'" onmouseleave="this.src='img/02_제품보기.png'">
               <img src="img/메뉴 라인.png" class="메뉴라인">
               <div class='섬_list' style="display: none;">
                 <div><a href=""><img src="img/햄버거_녹차섬.png" class="섬들" onmouseover="this.src='img/햄버거_녹차섬_호버.png'" onmouseout="this.src='img/햄버거_녹차섬.png'"></a>
@@ -59,30 +61,41 @@
                   <a href=""><img src="img/햄버거_영귤섬.png" class="섬들" onmouseover="this.src='img/햄버거_영귤섬_호버.png'" onmouseout="this.src='img/햄버거_영귤섬.png'"></a></div>
               </div>
             </li>
-            <a href="">
-              <li id="li_3">
+            <li id="li_3">
+              <a href="#page3">
                 <img src="img/03_이벤트.png" onmouseover="this.src='img/03_이벤트_호버.png'" onmouseout="this.src='img/03_이벤트.png'">
                 <img src="img/메뉴 라인.png" class="메뉴라인">
-              </li>
-            </a>
+              </a>
+            </li>
           </ul>
           <div class="logos">
-            <a target="_blank" href="https://www.instagram.com/osulloc_official/?hl=ko"><img src="img/ic_insta.png" class='sns_logo' id='insta_logo'></a>
-            <a target="_blank" href="https://www.facebook.com/Jeju.OSULLOC/"><img src="img/ic_facebook.png" class='sns_logo' id='facebook_logo'></a>
-            <a target="_blank" href="https://www.youtube.com/channel/UC27q_WWuOkdyNIr7M_6trvA"><img src="img/ic_Youtube.png" class='sns_logo' id='Youtube_logo'></a>
+            <a target="_blank" href="https://www.instagram.com/osulloc_official/?hl=ko"><img src="img/ic_insta.png" class='sns_logo 1'></a>
+            <a target="_blank" href="https://www.facebook.com/Jeju.OSULLOC/"><img src="img/ic_facebook.png" class='sns_logo 2'></a>
+            <a target="_blank" href="https://www.youtube.com/channel/UC27q_WWuOkdyNIr7M_6trvA"><img src="img/ic_Youtube.png" class='sns_logo 3'></a>
           </div>
         </nav>
       </div>
       <main>
-        <div id="img" style="background-image: url('img/배경.png')">
-          <img src="img/전체사이즈/이벤트 호버.png">
-          <img src="img/전체사이즈/뒤-산.png">
-          <img src="img/전체사이즈/냇가-돌,-풀.png">
-          <img src="img/전체사이즈/왼쪽-말.png">
-          <img src="img/메인 로고.png" id="메인로고">
+        <img src="img/메인 로고.png" class="main_logo">
+        <img src="img/location.png" class='location_bar' alt='location_bar'>
+        <img src="img/전체사이즈/이벤트 호버.png" class='event'>
+        <div class='page 1' id='page1' style="background-image: url('img/home/배경.png')">
+          <div class="logos_out">
+            <a target="_blank" href="https://www.instagram.com/osulloc_official/?hl=ko"><img src="img/ic_insta.png" class='sns_logo 1'></a>
+            <a target="_blank" href="https://www.facebook.com/Jeju.OSULLOC/"><img src="img/ic_facebook.png" class='sns_logo 2'></a>
+            <a target="_blank" href="https://www.youtube.com/channel/UC27q_WWuOkdyNIr7M_6trvA"><img src="img/ic_Youtube.png" class='sns_logo 3'></a>
+          </div>
+          <img src="img/scroll to explore.png" class='scroll_bar'>
+          <!-- <div class="img">
+            <img src="img/전체사이즈/뒤-산.png">
+            <img src="img/전체사이즈/냇가-돌,-풀.png">
+            <img src="img/전체사이즈/왼쪽-말.png">
+          </div> -->
         </div>
-        <span id="scroll to explore"></span>
-        <span id="Location_bar"><img src="Location_bar.png" alt="Location_bar"></span>
+        <div class='page 2' id='page2' style="background-image: url('img/녹차섬/녹차섬_이렇게 보여야 합니다.jpg')">
+        </div>
+        <div class='page 3' id='page3' style="background-image: url('img/산호섬/산호섬_이렇게 보여야 합니다.jpg')">
+        </div>
       </main>
     </div>
   </body>
