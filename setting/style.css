@@ -50,7 +50,6 @@ html{
   left: 0;
   top: 0;
   width: 1920px;
-  height: 980px;
 }
 /*     메뉴창         */
 #menu_bar{
@@ -64,7 +63,9 @@ html{
   position:fixed;
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
   z-index: 11;
+  transition: display .5s;
 }
 #dimmed{
   position: absolute;
@@ -127,7 +128,7 @@ nav li{
   bottom: 45px;
 }
 .logos_out{
-  position: fixed;
+  position: absolute;
   left: 50px;
   bottom: 45px;
 }
@@ -138,6 +139,7 @@ nav li{
 
 /*                 배경             */
 .page{
+  position: relative;
   /* width: calc(100vh * 1.9592); */
   width: 100vw;
   height: 100vh;
@@ -145,11 +147,7 @@ nav li{
   background-repeat: no-repeat;
   background-position: center bottom;
   overflow: hidden;
-  /*     test용     */
   background-attachment: fixed;
-  text-align: center;
-  color: red;
-  font-size: 3rem;
 }
 .page>.img>img{
   position: absolute;
@@ -169,15 +167,35 @@ nav li{
   z-index: 4;
 }
 .location_bar{
+  padding: 10px;
   position: fixed;
-  top: 50vh;
+  top: 50%;
   transform: translateY(-50%);
   right: 50px;
   z-index: 5;
 }
+.location_bar:hover~#location_popup{
+  display:none;
+}
+
+#location_popup{
+  position: absolute;
+  transform: translateX(-100%);
+}
+/* #location_popup:hover{
+  display:none;
+} */
 .scroll_bar{
   position:absolute;
   left: 50vw;
   transform: translateX(-50%);
   z-index: 3;
+  animation: scroll 0.7s ease .3s infinite alternate;
+}
+
+@keyframes scroll {
+    0%   {opacity: 0.8; bottom:20px;}
+
+    100% {opacity: 1; bottom:0px;}
+
 }
